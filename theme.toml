@@ -2,6 +2,9 @@ name = "kiyomi-portfolio"
 license = "MIT"
 licenselink = "https://github.com/mathscantor/hugo-theme-kiyomi-portfolio/blob/main/LICENSE"
 description = "A single-page portfolio theme with timeline, skills, and project showcases."
+homepage = "https://github.com/mathscantor/hugo-theme-kiyomi-portfolio"
+tags = ["portfolio", "clean", "customizable", "light", "minimal", "personal", "responsive", "simple"]
+features = ["portfolio", "shortcode"]
 min_version = "0.128.0"
 
 [author]
