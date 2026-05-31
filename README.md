@@ -9,7 +9,7 @@ without touching any templates.
 - License: MIT
 - Hugo: extended, `>= 0.128.0`
 
-![screenshot](images/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/mathscantor/hugo-theme-kiyomi-portfolio/main/images/screenshot.png)
 
 ## Features
 
