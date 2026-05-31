@@ -1,0 +1,8 @@
+name = "kiyomi-portfolio"
+license = "MIT"
+licenselink = "https://github.com/mathscantor/hugo-theme-kiyomi-portfolio"
+description = "A single-page portfolio theme with timeline, skills, and project showcases."
+min_version = "0.128.0"
+
+[author]
+  name = "mathscantor"

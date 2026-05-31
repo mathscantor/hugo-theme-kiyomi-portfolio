@@ -1,0 +1,43 @@
+<section id="contact" class="section bg-navy">
+  <div class="container container-xs mx-auto" style="max-width: 42rem; text-align: center;">
+    <div class="fade-in">
+      <h2 class="text-white font-display font-bold mb-5" style="font-size: clamp(2.25rem, 4vw, 3rem);">Let's get in contact</h2>
+      <p class="text-lg text-white-70 leading-relaxed mb-3">
+        Looking for a cyber security researcher? Let's get in contact.
+      </p>
+      <p class="text-base font-medium text-white-60 mb-12">
+        The best way to reach me is via email or LinkedIn. Feel free to reach out to me for any inquiries or opportunities.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem; text-align: left; margin-bottom: 2.5rem;">
+        <a href="mailto:{{ .Site.Params.email }}?subject=Portfolio%20Inquiry" class="contact-link">
+          <div class="contact-icon">
+            <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-white-50">Email</p>
+            <p class="font-semibold text-white">{{ .Site.Params.email }}</p>
+          </div>
+        </a>
+
+        <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noreferrer" class="contact-link">
+          <div class="contact-icon">
+            <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-white-50">LinkedIn</p>
+            <p class="font-semibold text-white flex items-center gap-2">
+              {{ .Site.Params.linkedin }}
+              <svg style="width: 0.875rem; height: 0.875rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <a href="{{ .Site.Params.resumeFile | relURL }}" download="{{ .Site.Params.firstName }}_{{ .Site.Params.lastName }}_Resume.pdf" class="inline-flex items-center gap-2 text-sm font-medium text-white-70 transition-colors" style="border: 1px solid rgba(255,255,255,0.2); border-radius: 9999px; padding: 0.625rem 1.25rem;">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume
+      </a>
+    </div>
+  </div>
+</section>

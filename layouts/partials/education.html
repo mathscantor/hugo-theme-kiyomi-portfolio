@@ -1,0 +1,53 @@
+<section id="education" class="section bg-background" style="border-top: 1px solid hsl(var(--border) / 0.4);">
+  <div class="container" style="max-width: 80rem;">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+      <!-- Education -->
+      <div class="fade-in">
+        <h2 class="section-header mb-10">
+          <span class="section-bar"></span>
+          Education
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          {{ range .Site.Data.education }}
+          <div class="card p-6 border-l-4" style="border-left: 4px solid hsl(var(--primary));">
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 0.5rem;">
+                <h3 class="font-bold text-lg">{{ .degree }}</h3>
+                <span class="text-sm font-semibold text-primary" style="white-space: nowrap; background-color: hsl(var(--primary) / 0.05); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">
+                  {{ .year }}
+                </span>
+              </div>
+              <p class="text-muted">{{ .school }}</p>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="fade-in delay-2">
+        <h2 class="section-header mb-10">
+          <span class="section-bar"></span>
+          Certifications
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+          {{ range .Site.Data.certifications }}
+          <div class="cert-group">
+            <div class="cert-dot"></div>
+            <h3 class="text-sm font-bold text-primary uppercase tracking-wide mb-3">{{ .year }}</h3>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+              {{ range .items }}
+              <li class="text-muted text-sm" style="background-color: hsl(var(--muted) / 0.4); padding: 0.75rem; border-radius: 0.5rem; border: 1px solid hsl(var(--border) / 0.5);">
+                {{ . }}
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

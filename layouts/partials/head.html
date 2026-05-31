@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ .Site.Title }}</title>
+<meta name="description" content="{{ .Site.Params.description }}">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="{{ .Site.Params.favicon | relURL }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ .Site.Title }}">
+<meta property="og:description" content="{{ .Site.Params.description }}">
+<meta property="og:image" content="{{ .Site.Params.ogImage | absURL }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Site.Title }}">
+<meta name="twitter:description" content="{{ .Site.Params.description }}">
+<meta name="twitter:image" content="{{ .Site.Params.ogImage | absURL }}">
+
+<!-- CSS -->
+{{ $mainCSS := resources.Get "css/main.css" }}
+{{ $animCSS := resources.Get "css/animations.css" }}
+{{ if $mainCSS }}<link rel="stylesheet" href="{{ $mainCSS.RelPermalink }}">{{ end }}
+{{ if $animCSS }}<link rel="stylesheet" href="{{ $animCSS.RelPermalink }}">{{ end }}

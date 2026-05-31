@@ -1,0 +1,65 @@
+/* === Scroll Reveal Animations === */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98),
+              transform 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98),
+              transform 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98),
+              transform 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+}
+
+.fade-in-none {
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+}
+
+.fade-in.is-visible,
+.fade-in-left.is-visible,
+.fade-in-right.is-visible,
+.fade-in-none.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Staggered delays */
+.delay-1 { transition-delay: 0.05s; }
+.delay-2 { transition-delay: 0.1s; }
+.delay-3 { transition-delay: 0.15s; }
+.delay-4 { transition-delay: 0.2s; }
+.delay-5 { transition-delay: 0.25s; }
+.delay-6 { transition-delay: 0.3s; }
+.delay-7 { transition-delay: 0.35s; }
+.delay-8 { transition-delay: 0.4s; }
+
+/* Progress bar animation */
+.progress-bar-fill {
+  width: 0;
+  transition: width 1s ease 0.3s;
+}
+.is-visible .progress-bar-fill {
+  /* Width set inline via style attribute */
+}
+
+/* Hamburger icon animation */
+.hamburger-line {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background-color: currentColor;
+  transition: all 0.3s ease;
+}
+
+/* Smooth popover transitions handled in main.css via .fab-popover.open */

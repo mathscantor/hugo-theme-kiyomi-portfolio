@@ -1,0 +1,9 @@
+# Awards and recognition. Remove or empty this file to hide the Awards section.
+# Each award links to `link` (e.g. an article or certificate URL).
+- title: "Example Award of Excellence"
+  source: "Sample Organization"
+  link: "https://example.com"
+
+- title: "Hackathon Winner 2024"
+  source: "Example Hackathon"
+  link: "https://example.com"

@@ -1,0 +1,26 @@
+<div class="initiative-card">
+  {{ $video := .Get "video_src" }}
+  {{ if $video }}
+  <div class="video-container">
+    <video controls preload="metadata" src="{{ $video | relURL }}">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  {{ end }}
+  <div class="p-5 flex flex-col flex-grow">
+    <div class="mb-3">
+      <span class="text-primary font-bold uppercase tracking-widest" style="font-size: 0.625rem;">{{ .Get "company" }}</span>
+      <span class="text-muted" style="font-size: 0.625rem; opacity: 0.5; margin-left: 0.5rem;">· {{ .Get "category" }}</span>
+    </div>
+    <h3 class="text-sm font-bold text-foreground mb-2">{{ .Get "title" }}</h3>
+    <p class="text-xs text-muted leading-relaxed flex-grow mb-4">{{ .Get "desc" }}</p>
+    {{ $tags := .Get "tags" }}
+    {{ if $tags }}
+    <div class="flex flex-wrap gap-2" style="margin-top: auto;">
+      {{ range split $tags "," }}
+      <span class="badge">{{ strings.TrimSpace . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>

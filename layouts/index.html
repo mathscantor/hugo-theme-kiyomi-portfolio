@@ -1,0 +1,10 @@
+{{ define "main" }}
+  {{- partial "hero.html" . -}}
+  {{- partial "about.html" . -}}
+  {{- with .Site.Data.experience }}{{- partial "experience.html" $ -}}{{ end -}}
+  {{- with .Site.Data.presentations }}{{- partial "presentations.html" $ -}}{{ end -}}
+  {{- if or .Site.Data.skills .Site.Data.languages }}{{- partial "skills.html" . -}}{{ end -}}
+  {{- if or .Site.Data.education .Site.Data.certifications }}{{- partial "education.html" . -}}{{ end -}}
+  {{- with .Site.Data.awards }}{{- partial "awards.html" $ -}}{{ end -}}
+  {{- partial "contact.html" . -}}
+{{ end }}

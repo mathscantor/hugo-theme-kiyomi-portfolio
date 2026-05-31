@@ -1,0 +1,23 @@
+<section class="section bg-muted-20" style="border-top: 1px solid hsl(var(--border) / 0.4); border-bottom: 1px solid hsl(var(--border) / 0.4);">
+  <div class="container" style="max-width: 64rem; text-align: center;">
+    <div class="fade-in">
+      <h2 class="section-header justify-center mb-12" style="font-size: 1.875rem;">Awards &amp; Recognition</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {{ range .Site.Data.awards }}
+        <a href="{{ .link }}" target="_blank" rel="noreferrer" style="display: block;">
+          <div class="award-card">
+            <div class="award-icon">
+              <span style="font-size: 1.25rem;">🏆</span>
+            </div>
+            <h3 class="text-lg font-bold mb-3">{{ .title }}</h3>
+            <p class="text-muted font-medium flex items-center gap-1 justify-center">
+              {{ .source }}
+              <svg style="width: 1rem; height: 1rem; opacity: 0.5;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </p>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>

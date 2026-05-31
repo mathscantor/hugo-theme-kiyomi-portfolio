@@ -1,0 +1,56 @@
+<section id="presentations" class="section bg-background" style="padding-top: 5rem; padding-bottom: 5rem; border-top: 1px solid hsl(var(--border) / 0.4); border-bottom: 1px solid hsl(var(--border) / 0.4);">
+  <div class="container" style="max-width: 64rem;">
+    <div class="fade-in">
+      <h2 class="section-header mb-3" style="font-size: 1.5rem;">
+        <span class="section-bar" style="width: 2rem; background-color: hsl(var(--primary) / 0.5);"></span>
+        Presentations
+      </h2>
+      <p class="text-sm text-muted mb-10 ml-12">
+        Talks and presentations delivered at conferences and industry events.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" style="margin-left: 0;">
+        {{ range $idx, $item := .Site.Data.presentations }}
+        <div class="fade-in delay-{{ add $idx 1 }}" style="height: 100%;">
+          <div class="initiative-card">
+            <!-- Thumbnail / Media -->
+            <div class="video-container">
+              {{ if eq $item.media_type "video" }}
+              <video controls preload="metadata" src="{{ $item.media_src | relURL }}">
+                Your browser does not support the video tag.
+              </video>
+              {{ else if eq $item.media_type "image" }}
+              <img src="{{ $item.media_src | relURL }}" alt="{{ $item.title }}" style="width: 100%; height: auto; display: block;">
+              {{ end }}
+            </div>
+
+            <!-- Content -->
+            <div class="p-5 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="text-primary font-bold uppercase tracking-widest" style="font-size: 0.625rem;">{{ $item.event }}</span>
+                <span class="text-muted" style="font-size: 0.625rem; opacity: 0.5; margin-left: 0.5rem;">· {{ $item.date }}</span>
+              </div>
+              <h3 class="text-sm font-bold text-foreground mb-2">{{ $item.title }}</h3>
+              <p class="text-xs text-muted leading-relaxed flex-grow mb-4">{{ $item.description }}</p>
+
+              {{ if $item.link }}
+              <div class="mb-3">
+                <a href="{{ $item.link }}" target="_blank" rel="noopener noreferrer" class="text-xs text-primary" style="text-decoration: underline;">
+                  View slides / recording &rarr;
+                </a>
+              </div>
+              {{ end }}
+
+              <div class="flex flex-wrap gap-2" style="margin-top: auto;">
+                {{ range $item.tags }}
+                <span class="badge">{{ . }}</span>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>

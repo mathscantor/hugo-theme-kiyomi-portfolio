@@ -1,0 +1,9 @@
+# Certifications grouped by year, newest first. Each year holds a list of items.
+- year: "2025"
+  items:
+    - "Example Professional Certification"
+
+- year: "2023"
+  items:
+    - "Another Certification You Earned"
+    - "A Second Certification From The Same Year"

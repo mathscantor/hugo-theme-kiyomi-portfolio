@@ -1,0 +1,9 @@
+{{ $direction := .Get "direction" | default "up" }}
+{{ $delay := .Get "delay" | default "" }}
+{{ $class := "fade-in" }}
+{{ if eq $direction "left" }}{{ $class = "fade-in-left" }}{{ end }}
+{{ if eq $direction "right" }}{{ $class = "fade-in-right" }}{{ end }}
+{{ if eq $direction "none" }}{{ $class = "fade-in-none" }}{{ end }}
+<div class="{{ $class }}{{ with $delay }} delay-{{ . }}{{ end }}">
+  {{ .Inner }}
+</div>

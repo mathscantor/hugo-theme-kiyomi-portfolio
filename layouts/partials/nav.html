@@ -1,0 +1,47 @@
+<header class="navbar" id="navbar">
+  <div class="container flex items-center justify-between" style="height: 100%;">
+    <a href="#top" class="font-display font-bold text-xl text-foreground transition-colors hover:text-primary" style="letter-spacing: 0.025em;">
+      {{ .Site.Params.firstName }} {{ .Site.Params.lastName }}
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8" style="display: none;" id="desktop-nav">
+      <button class="nav-link" data-scroll="about">About</button>
+      <button class="nav-link" data-scroll="experience">Experience</button>
+      <button class="nav-link" data-scroll="skills">Skills</button>
+      <button class="nav-link" data-scroll="education">Education</button>
+      <button class="nav-link" data-scroll="contact">Contact</button>
+      <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);" data-scroll="contact">
+        Let's Talk
+      </a>
+    </nav>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" style="display: none; padding: 0.5rem; border-radius: 0.375rem; border: none; background: none; color: hsl(var(--foreground)); cursor: pointer;">
+      <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg class="icon-lg" style="display: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Backdrop -->
+<div class="mobile-backdrop" id="mobile-backdrop"></div>
+
+<!-- Mobile Menu -->
+<nav class="mobile-menu" id="mobile-menu">
+  <button class="mobile-nav-link" data-scroll="about">About</button>
+  <button class="mobile-nav-link" data-scroll="experience">Experience</button>
+  <button class="mobile-nav-link" data-scroll="skills">Skills</button>
+  <button class="mobile-nav-link" data-scroll="education">Education</button>
+  <button class="mobile-nav-link" data-scroll="contact">Contact</button>
+  <div style="margin-top: 0.5rem; margin-bottom: 0.25rem; padding: 0 0.75rem;">
+    <a href="#contact" class="btn btn-primary w-full" data-scroll="contact" style="font-size: 0.875rem;">Let's Talk</a>
+  </div>
+</nav>

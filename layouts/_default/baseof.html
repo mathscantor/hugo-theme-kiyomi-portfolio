@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+  {{- partial "head.html" . -}}
+</head>
+<body>
+  {{- partial "nav.html" . -}}
+  {{- partial "contact-fab.html" . -}}
+  <main>
+    {{- block "main" . }}{{ end -}}
+  </main>
+  {{- partial "footer.html" . -}}
+
+  {{ $scrollReveal := resources.Get "js/scroll-reveal.js" }}
+  {{ $nav := resources.Get "js/nav.js" }}
+  {{ $skillsToggle := resources.Get "js/skills-toggle.js" }}
+  {{ $contactFab := resources.Get "js/contact-fab.js" }}
+  {{ if $scrollReveal }}<script defer src="{{ $scrollReveal.RelPermalink }}"></script>{{ end }}
+  {{ if $nav }}<script defer src="{{ $nav.RelPermalink }}"></script>{{ end }}
+  {{ if $skillsToggle }}<script defer src="{{ $skillsToggle.RelPermalink }}"></script>{{ end }}
+  {{ if $contactFab }}<script defer src="{{ $contactFab.RelPermalink }}"></script>{{ end }}
+</body>
+</html>

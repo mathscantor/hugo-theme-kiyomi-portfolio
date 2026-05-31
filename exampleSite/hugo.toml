@@ -1,0 +1,25 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Jane Doe — Software Engineer'
+theme = 'kiyomi-portfolio'
+
+[params]
+  firstName = "Jane"
+  lastName = "Doe"
+  tagline = "Software Engineer"
+  email = "jane.doe@example.com"
+  linkedin = "https://www.linkedin.com/in/example/"
+  location = "Remote"
+  profileImage = "/images/profile.jpg"
+  heroBackground = "/images/hero-bg.png"
+  favicon = "/favicon.svg"
+  ogImage = "/opengraph.jpg"
+  resumeFile = "/resume.pdf"
+  description = "Jane Doe — Software Engineer building reliable systems."
+
+disableKinds = ['taxonomy', 'term']
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.128.0"

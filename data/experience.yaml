@@ -1,0 +1,34 @@
+# Work experience, newest first. Each entry renders as a timeline card.
+# `context`, `projects` and `media_mentions` are optional.
+- company: "Example Corp"
+  title: "Senior Software Engineer"
+  period: "Jan 2022 - Present"
+  context: "Example Corp is a placeholder company used to demonstrate the theme. Replace this with a short description of where you worked."
+  bullets:
+    - "Describe a key responsibility or achievement here."
+    - "Quantify impact where you can (e.g. improved X by 30%)."
+    - "Keep each bullet to a single concise sentence."
+  projects:
+    - title: "Sample Project"
+      desc: "A short one-line description of what this project does."
+      tags:
+        - "Go"
+        - "Distributed Systems"
+    - title: "Another Project"
+      desc: "Another optional project to show under this role."
+      tags:
+        - "TypeScript"
+        - "React"
+  # media_mentions:
+  #   - publication: "Example News"
+  #     article_title: "How Example Corp shipped X"
+  #     excerpt: "A short quote or summary of the article."
+  #     url: "https://example.com/article"
+
+- company: "Startup Inc"
+  title: "Software Engineer"
+  period: "Jun 2019 - Dec 2021"
+  context: "Optional context line about the company or team."
+  bullets:
+    - "Built and maintained core product features."
+    - "Collaborated with cross-functional teams to ship releases."

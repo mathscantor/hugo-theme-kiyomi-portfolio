@@ -1,0 +1,90 @@
+<section id="experience" class="section bg-navy">
+  <div class="container" style="max-width: 64rem;">
+    <div class="fade-in">
+      <h2 class="section-header text-white mb-12">
+        <span class="section-bar section-bar-wide"></span>
+        Experience
+      </h2>
+
+      <div class="relative">
+        <!-- Vertical timeline line (desktop) -->
+        <div class="timeline-line" style="display: none;" id="timeline-line"></div>
+
+        <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+          {{ range $idx, $exp := .Site.Data.experience }}
+          <div class="fade-in delay-{{ add $idx 1 }}">
+            <div class="flex gap-6" style="gap: 1.5rem;">
+              <!-- Dot column -->
+              <div class="shrink-0" style="width: 60px; display: flex; flex-direction: column; align-items: center; padding-top: 0.5rem;">
+                <div class="timeline-dot"></div>
+              </div>
+
+              <!-- Content -->
+              <div class="flex-1" style="min-width: 0; padding-bottom: 0.5rem;">
+                <div class="mb-3">
+                  <h3 class="text-lg font-bold text-white">{{ $exp.company }}</h3>
+                  <p class="text-sm font-medium text-white-70" style="margin-top: 0.125rem;">{{ $exp.title }}</p>
+                  <p class="text-xs text-white-50" style="margin-top: 0.25rem;">{{ $exp.period }}</p>
+                </div>
+
+                <div class="card p-5">
+                  {{ with $exp.context }}
+                  <p class="context-quote">{{ . }}</p>
+                  {{ end }}
+
+                  <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                    {{ range $exp.bullets }}
+                    <li class="flex items-start gap-3">
+                      <svg class="icon-sm shrink-0" style="margin-top: 0.125rem; color: hsl(var(--primary) / 0.6);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                      <span class="text-sm text-muted leading-relaxed">{{ . }}</span>
+                    </li>
+                    {{ end }}
+                  </ul>
+
+                  {{ with $exp.projects }}
+                  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid hsl(var(--border) / 0.5);">
+                    <p class="text-xs font-bold uppercase tracking-widest text-primary mb-3">Selected Work</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {{ range . }}
+                      <div class="project-mini">
+                        <p class="text-sm font-semibold text-foreground mb-1">{{ .title }}</p>
+                        <p class="text-xs text-muted leading-relaxed mb-2">{{ .desc }}</p>
+                        <div class="flex flex-wrap gap-1">
+                          {{ range .tags }}
+                          <span class="badge">{{ . }}</span>
+                          {{ end }}
+                        </div>
+                      </div>
+                      {{ end }}
+                    </div>
+                  </div>
+                  {{ end }}
+
+                  {{ with $exp.media_mentions }}
+                  <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid hsl(var(--border) / 0.5); display: flex; flex-direction: column; gap: 0.75rem;">
+                    {{ range . }}
+                    <a href="{{ .url }}" target="_blank" rel="noreferrer" class="media-mention">
+                      <div class="shrink-0" style="margin-top: 0.125rem;">
+                        <span class="media-mention-badge">Media Mention</span>
+                      </div>
+                      <div style="min-width: 0;">
+                        <p class="text-xs text-muted leading-relaxed mb-2">{{ .excerpt }}</p>
+                        <p class="text-primary font-semibold flex items-center gap-1" style="font-size: 0.6875rem;">
+                          {{ .publication }} · {{ .article_title }}
+                          <svg class="icon-sm" style="width: 0.75rem; height: 0.75rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </p>
+                      </div>
+                    </a>
+                    {{ end }}
+                  </div>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+<section id="skills" class="section bg-muted-20" style="padding-top: 4rem; padding-bottom: 4rem;">
+  <div class="container" style="max-width: 64rem;">
+    <div class="fade-in">
+      <h2 class="section-header">
+        <span class="section-bar"></span>
+        Skills &amp; Languages
+      </h2>
+      <p class="text-xs text-muted mt-3 mb-10 ml-12">Click each skill to see how it has been applied.</p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <!-- Skills -->
+        <div style="display: flex; flex-direction: column; gap: 1.75rem;">
+          {{ range .Site.Data.skills }}
+          <div data-skill-category="{{ .category }}">
+            <p class="text-muted font-bold uppercase tracking-widest mb-3" style="font-size: 0.625rem; opacity: 0.7;">{{ .category }}</p>
+            <div class="flex flex-wrap gap-2">
+              {{ range .items }}
+              <button type="button"
+                class="skill-pill"
+                data-skill-name="{{ .name }}"
+                data-skill-explanation="{{ .explanation }}"
+                aria-expanded="false">
+                {{ .name }}
+              </button>
+              {{ end }}
+            </div>
+            <div class="skill-explanation" data-skill-explanation-box></div>
+          </div>
+          {{ end }}
+        </div>
+
+        <!-- Languages -->
+        <div>
+          <p class="text-muted font-bold uppercase tracking-widest mb-6" style="font-size: 0.625rem; opacity: 0.7;">Language Proficiency</p>
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            {{ range .Site.Data.languages }}
+            <div class="fade-in">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-semibold text-foreground">{{ .name }}</span>
+                <span class="text-primary font-medium tracking-wide" style="font-size: 0.6875rem; opacity: 0.7;">{{ .level }}</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: {{ .percent }}%;"></div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
