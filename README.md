@@ -9,6 +9,8 @@ without touching any templates.
 - License: MIT
 - Hugo: extended, `>= 0.128.0`
 
+![screenshot](images/screenshot.png)
+
 ## Features
 
 - Single-page layout with smooth-scroll navigation and a mobile menu
