@@ -253,23 +253,24 @@ in `assets/css/animations.css`.
 ## How placeholder data works
 
 Hugo never writes into your source tree during a build, so the theme cannot
-"auto-create" files in your `data/` directory. Instead it uses two mechanisms:
+"auto-create" files in your `data/` directory. The theme also intentionally
+does **not** ship a top-level `data/` directory, so your project's `data/`
+files are always authoritative: whatever you put in `data/` is exactly what
+renders, and an empty or missing file simply hides that section (each section
+is guarded in `layouts/index.html`).
 
-1. **Theme-level defaults (zero-config preview).** The theme ships a `data/`
-   directory. Hugo merges it into `.Site.Data` with **your project data taking
-   precedence**. A brand-new site therefore renders with placeholder content out
-   of the box; as soon as you add your own `data/skills.yaml` (etc.), it fully
-   overrides the theme's version.
+To get started quickly, use the editable starter files instead:
 
-2. **Editable starter files (copy-if-missing).** `exampleSite/` contains a
-   complete working site. The `scripts/init-data.sh` helper (or the `cp -rn`
-   one-liner above) copies those data files and `content/_index.md` into your
-   site **only when they don't already exist**, so you get editable copies
-   without ever clobbering your own work. Re-running it is safe.
+- **Copy-if-missing starter (recommended).** `exampleSite/` contains a complete
+  working site. The `scripts/init-data.sh` helper (or the `cp -rn` one-liner
+  above) copies those data files and `content/_index.md` into your site **only
+  when they don't already exist**, so you get editable copies without ever
+  clobbering your own work. Re-running it is safe.
 
-Because the merge in (1) is by top-level file, once you provide your own version
-of a given data file it completely replaces the theme default for that section.
+Because there are no theme-level data defaults, you never see Hugo's
+"overridden by higher precedence data" warnings, and you stay in full control
+of every section.
 
 ## License
 
-MIT. See `theme.toml` for details.
+MIT. See the [LICENSE](LICENSE) file for the full text.
