@@ -2,6 +2,11 @@
   var targets = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-none');
   if (!targets.length) return;
 
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    targets.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {

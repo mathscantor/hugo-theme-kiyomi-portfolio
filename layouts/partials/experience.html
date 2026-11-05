@@ -11,7 +11,7 @@
         <div class="timeline-line" style="display: none;" id="timeline-line"></div>
 
         <div style="display: flex; flex-direction: column; gap: 2.5rem;">
-          {{ range $idx, $exp := .Site.Data.experience }}
+          {{ range $idx, $exp := hugo.Data.experience }}
           <div class="fade-in delay-{{ add $idx 1 }}">
             <div class="flex gap-6" style="gap: 1.5rem;">
               <!-- Dot column -->

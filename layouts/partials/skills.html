@@ -10,7 +10,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <!-- Skills -->
         <div style="display: flex; flex-direction: column; gap: 1.75rem;">
-          {{ range .Site.Data.skills }}
+          {{ range hugo.Data.skills }}
           <div data-skill-category="{{ .category }}">
             <p class="text-muted font-bold uppercase tracking-widest mb-3" style="font-size: 0.625rem; opacity: 0.7;">{{ .category }}</p>
             <div class="flex flex-wrap gap-2">
@@ -33,7 +33,7 @@
         <div>
           <p class="text-muted font-bold uppercase tracking-widest mb-6" style="font-size: 0.625rem; opacity: 0.7;">Language Proficiency</p>
           <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-            {{ range .Site.Data.languages }}
+            {{ range hugo.Data.languages }}
             <div class="fade-in">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-sm font-semibold text-foreground">{{ .name }}</span>
