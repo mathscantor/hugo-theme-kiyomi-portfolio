@@ -62,4 +62,15 @@
   transition: all 0.3s ease;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .fade-in-left,
+  .fade-in-right,
+  .fade-in-none {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Smooth popover transitions handled in main.css via .fab-popover.open */

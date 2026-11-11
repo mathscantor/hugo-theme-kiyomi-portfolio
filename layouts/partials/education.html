@@ -9,7 +9,7 @@
           Education
         </h2>
         <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-          {{ range .Site.Data.education }}
+          {{ range hugo.Data.education }}
           <div class="card p-6 border-l-4" style="border-left: 4px solid hsl(var(--primary));">
             <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.5rem;">
               <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 0.5rem;">
@@ -32,7 +32,7 @@
           Certifications
         </h2>
         <div style="display: flex; flex-direction: column; gap: 2rem;">
-          {{ range .Site.Data.certifications }}
+          {{ range hugo.Data.certifications }}
           <div class="cert-group">
             <div class="cert-dot"></div>
             <h3 class="text-sm font-bold text-primary uppercase tracking-wide mb-3">{{ .year }}</h3>

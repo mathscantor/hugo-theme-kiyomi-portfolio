@@ -6,15 +6,15 @@
 
     pills.forEach(function (pill) {
       pill.addEventListener('click', function () {
-        var skillName = pill.getAttribute('data-skill-name');
-        var explanation = pill.getAttribute('data-skill-explanation');
+        var skillName = pill.getAttribute('data-skill-name') || '';
+        var explanation = pill.getAttribute('data-skill-explanation') || '';
 
         if (activeSkill === skillName) {
           // Deactivate
           pill.classList.remove('active');
           pill.setAttribute('aria-expanded', 'false');
           explanationBox.classList.remove('visible');
-          explanationBox.innerHTML = '';
+          explanationBox.textContent = '';
           activeSkill = null;
         } else {
           // Deactivate previous
@@ -25,9 +25,14 @@
           // Activate new
           pill.classList.add('active');
           pill.setAttribute('aria-expanded', 'true');
-          explanationBox.innerHTML =
-            '<p class="font-semibold text-primary mb-1">' + skillName + '</p>' +
-            '<p>' + explanation + '</p>';
+          explanationBox.textContent = '';
+          var titleEl = document.createElement('p');
+          titleEl.className = 'font-semibold text-primary mb-1';
+          titleEl.textContent = skillName;
+          var bodyEl = document.createElement('p');
+          bodyEl.textContent = explanation;
+          explanationBox.appendChild(titleEl);
+          explanationBox.appendChild(bodyEl);
           explanationBox.classList.add('visible');
           activeSkill = skillName;
         }

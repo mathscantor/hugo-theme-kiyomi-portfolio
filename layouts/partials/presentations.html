@@ -10,19 +10,23 @@
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" style="margin-left: 0;">
-        {{ range $idx, $item := .Site.Data.presentations }}
+        {{ range $idx, $item := hugo.Data.presentations }}
         <div class="fade-in delay-{{ add $idx 1 }}" style="height: 100%;">
           <div class="initiative-card">
             <!-- Thumbnail / Media -->
+            {{ if $item.media_src }}
             <div class="video-container">
               {{ if eq $item.media_type "video" }}
               <video controls preload="metadata" src="{{ $item.media_src | relURL }}">
                 Your browser does not support the video tag.
               </video>
               {{ else if eq $item.media_type "image" }}
-              <img src="{{ $item.media_src | relURL }}" alt="{{ $item.title }}" style="width: 100%; height: auto; display: block;">
+              <img src="{{ $item.media_src | relURL }}" alt="{{ $item.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block;" onerror="this.parentElement.classList.add('media-placeholder'); this.style.display='none'">
               {{ end }}
             </div>
+            {{ else }}
+            <div class="video-container media-placeholder"></div>
+            {{ end }}
 
             <!-- Content -->
             <div class="p-5 flex flex-col flex-grow">
